@@ -1,0 +1,45 @@
+//https://www.hackerrank.com/challenges/find-the-running-median/problem
+
+#include<bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+using namespace __gnu_cxx;
+template <typename T>
+using oset = tree<T, null_type, less<T>,rb_tree_tag, tree_order_statistics_node_update>;
+#define ll long long
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define pb push_back
+#define ok cout<<"ok"<<endl;
+#define endl '\n'
+const ll M =1e9+7;
+const ll N =2e5+1;
+int32_t main()
+{
+    fast
+    ll i,j,k,n,m,q;
+    cin>>n;
+    vector<ll>v;
+    for(i=1;i<=n;i++)
+    {
+        cin>>k;
+        v.insert(lower_bound(v.begin(),v.end(),k),k);
+        if(i&1)
+        {
+            cout<<v[i/2]<<".0"<<endl;
+        }
+        else
+        {
+            ll x=v[i/2-1]+v[i/2];
+            cout<<(x/2)<<(x&1?".5":".0")<<endl;
+        }
+    }
+
+}
+
+
+//This is equivalent to ordered multiset.
+
+/*
+By solving this problem of hackerrank I learned how to insert a number in certain position of a vector. This will help me in the long run.
