@@ -42,4 +42,8 @@ int32_t main()
 //This is equivalent to ordered multiset.
 
 /*
-By solving this problem of hackerrank I learned how to insert a number in certain position of a vector. This will help me in the long run.
+By solving this problem of hackerrank I learned how to insert a number in a certain vector position. This will help me in the long run.
+
+The only downside is:- if the numbers are given in an descending order. The time complexity would be n*n.
+In simple: The complexity of 27th line is n. (Since it's inside a loop, the total complexity is n*n).
+*/
